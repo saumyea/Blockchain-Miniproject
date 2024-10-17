@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload and Hashing</title>
+    <!-- CryptoJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Ethers.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.2/dist/ethers.umd.min.js"></script>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to External JS Files -->
+    <script src="config.js" type="module" defer></script>
+    <script src="script.js" type="module" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload & Verify Student Documents</h1>
+
+        <!-- File Upload Section -->
+        <div class="form-group">
+            <label for="fileInput">Select a Document:</label>
+            <input type="file" id="fileInput" accept=".pdf,.jpg,.png,.docx" />
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="button-group">
+            <button onclick="submitDocument()">Generate Hash</button>
+            <button onclick="connectMetaMask()">Connect MetaMask</button>
+            <button onclick="sendHashToContract()">Send Hash to Smart Contract</button>
+            <button onclick="verifyDocumentFromContract()">Verify Document</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="status-group">
+            <p id="hashOutput">Hash will appear here.</p>
+            <p id="status">Status messages will appear here.</p>
+        </div>
+    </div>
+</body>
+</html>
